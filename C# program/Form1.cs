@@ -55,5 +55,12 @@ namespace C__program
             DateTime now = DateTime.Now;
             label4.Text = now.ToString("HH:mm:ss");
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            label5.BackColor = System.Drawing.Color.Yellow;
+
+
+        }
     }
 }

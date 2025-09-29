@@ -46,6 +46,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -134,7 +135,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(36, 254);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(401, 109);
@@ -146,7 +147,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(36, 21);
+            this.label4.Location = new System.Drawing.Point(73, 394);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(306, 69);
             this.label4.TabIndex = 0;
@@ -178,6 +179,7 @@
             this.button4.TabIndex = 10;
             this.button4.Text = "Yellow";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -233,11 +235,19 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(38, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(321, 51);
+            this.label5.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 500);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -275,6 +285,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.Label label5;
     }
 }
 
