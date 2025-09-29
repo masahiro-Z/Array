@@ -143,6 +143,22 @@ namespace C__program
         {
             label5.BackColor = System.Drawing.Color.Blue;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+        "本当に実行しますか？",     // メッセージ本文
+        "確認",                      // タイトル
+        MessageBoxButtons.OKCancel, // OK と キャンセルのボタンを出す
+        MessageBoxIcon.Question     // アイコン
+    );
+
+            if (result == DialogResult.OK)
+            {
+                // OK が押されたときの処理
+                MessageBox.Show("OK");
+            }
+        }
         // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\    }
     }
 }
