@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,27 +31,36 @@ namespace C__program
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                // 初期フォルダ (必要なら設定)
                 ofd.InitialDirectory = @"C:\";
-                // ファイルの種類をフィルタ (例: テキストファイルとすべてのファイル)
                 ofd.Filter = "テキストファイル (*.txt)|*.txt|すべてのファイル (*.*)|*.*";
-                ofd.FilterIndex = 1; // デフォルトは1番目
+                ofd.FilterIndex = 1;
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    // 選択されたファイルのパスを textBox1 に表示
                     textBox1.Text = ofd.FileName;
-
-                    try
-                    {
-                        string content = System.IO.File.ReadAllText(ofd.FileName);
-                        label6.Text = content;
-                    }
-                    catch (Exception) { label6.Text = "ファイルが存在しません"; }
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string path = textBox1.Text;
+            try
+            {
+                if (!System.IO.File.Exists(path))
+
+                    throw new FileNotFoundException();
+
+                string content = System.IO.File.ReadAllText(path);
+                label6.Text = content;
+            }
+            catch (Exception)
+            {
+                label6.Text = "ファイルエラー";
+            }
+        }
         
+
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -96,6 +107,8 @@ namespace C__program
         {
             label5.BackColor = System.Drawing.Color.Blue;
         }
+
+      
         // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
