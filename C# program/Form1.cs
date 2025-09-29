@@ -32,41 +32,28 @@ namespace C__program
 
         private void label3_Click(object sender, EventArgs e)
         {
-
+         
         }
+
+      
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
 
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
+       
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
-            using (var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
-                panel1.ClientRectangle,
-                Color.White,    // 上の色
-                Color.Blue,   // 下の色
-                System.Drawing.Drawing2D.LinearGradientMode.Vertical)) // 縦方向
-            {
-                e.Graphics.FillRectangle(brush, panel1.ClientRectangle);
-            }
+
         }
 
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            label4.Text = now.ToString("HH:mm:ss");
+        }
     }
 }
