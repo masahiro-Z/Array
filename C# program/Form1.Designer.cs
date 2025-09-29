@@ -192,6 +192,7 @@
             this.button5.TabIndex = 11;
             this.button5.Text = "Green";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -228,6 +229,7 @@
             this.button8.TabIndex = 14;
             this.button8.Text = "Bule";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // timer1
             // 

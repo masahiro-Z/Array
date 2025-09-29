@@ -50,17 +50,42 @@ namespace C__program
 
         }
 
+
+        // 時刻表示\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
             label4.Text = now.ToString("HH:mm:ss");
         }
+        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+
+        // 色返す\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         private void button4_Click(object sender, EventArgs e)
         {
             label5.BackColor = System.Drawing.Color.Yellow;
-
-
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            label5.BackColor = System.Drawing.Color.Green;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            label5.BackColor = System.Drawing.Color.Blue;
+        }
+        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+
+
+
+
+
+
+
     }
 }
