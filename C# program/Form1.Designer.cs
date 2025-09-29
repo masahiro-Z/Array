@@ -38,6 +38,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -46,7 +47,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -120,6 +121,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button2);
@@ -143,6 +145,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "返却値";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(38, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(321, 51);
+            this.label5.TabIndex = 0;
             // 
             // label4
             // 
@@ -237,12 +246,12 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // label5
+            // label6
             // 
-            this.label5.Location = new System.Drawing.Point(38, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(321, 51);
-            this.label5.TabIndex = 0;
+            this.label6.Location = new System.Drawing.Point(123, 76);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(258, 32);
+            this.label6.TabIndex = 6;
             // 
             // Form1
             // 
@@ -288,6 +297,7 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 

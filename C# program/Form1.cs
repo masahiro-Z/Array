@@ -39,6 +39,13 @@ namespace C__program
                 {
                     // 選択されたファイルのパスを textBox1 に表示
                     textBox1.Text = ofd.FileName;
+
+                    try
+                    {
+                        string content = System.IO.File.ReadAllText(ofd.FileName);
+                        label6.Text = content;
+                    }
+                    catch (Exception) { label6.Text = "ファイルが存在しません"; }
                 }
             }
         }
