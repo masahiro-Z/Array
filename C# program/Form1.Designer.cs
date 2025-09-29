@@ -249,9 +249,10 @@
             // 
             // label6
             // 
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label6.Location = new System.Drawing.Point(123, 76);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(258, 32);
+            this.label6.Size = new System.Drawing.Size(258, 80);
             this.label6.TabIndex = 6;
             // 
             // Form1
@@ -283,7 +284,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Button button1;
@@ -298,7 +298,8 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Button button2;
     }
 }
 
