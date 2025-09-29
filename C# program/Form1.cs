@@ -16,17 +16,19 @@ namespace C__program
     public partial class Form1 : Form
     {
 
-       
+
         public Form1()
         {
             InitializeComponent();
+            this.label4.Paint += label4_Paint;
+
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
+        // ファイル取得\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         private void button1_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
@@ -59,15 +61,15 @@ namespace C__program
                 label6.Text = "ファイルエラー";
             }
         }
-        
+        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
         private void label3_Click(object sender, EventArgs e)
         {
-         
+
         }
 
-      
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -75,7 +77,7 @@ namespace C__program
         }
 
 
-       
+
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
@@ -90,6 +92,40 @@ namespace C__program
             label4.Text = now.ToString("HH:mm:ss");
         }
         // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+        // グラデーション\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        private void label4_Paint(object sender, PaintEventArgs e)
+        {
+            Label lbl = (Label)sender;
+
+            // グラデーション背景を描画
+            using (LinearGradientBrush brush = new LinearGradientBrush(
+                lbl.ClientRectangle,
+                Color.White,   // 上の色
+                Color.Blue,    // 下の色
+                LinearGradientMode.Vertical))
+            {
+                e.Graphics.FillRectangle(brush, lbl.ClientRectangle);
+            }
+
+            // テキストを描画
+            TextRenderer.DrawText(
+                e.Graphics,
+                lbl.Text,
+                lbl.Font,
+                lbl.ClientRectangle,
+                lbl.ForeColor,
+                TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+        }
+        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+
+
+
+
 
 
         // 色返す\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -107,19 +143,14 @@ namespace C__program
         {
             label5.BackColor = System.Drawing.Color.Blue;
         }
-
-      
-        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-
-
-
-
-
-
-
-
-
-
+        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\    }
     }
 }
+
+      
+        
+
+
+
+    
+
