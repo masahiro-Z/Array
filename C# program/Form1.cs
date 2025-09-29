@@ -27,8 +27,22 @@ namespace C__program
 
         private void button1_Click(object sender, EventArgs e)
         {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                // 初期フォルダ (必要なら設定)
+                ofd.InitialDirectory = @"C:\";
+                // ファイルの種類をフィルタ (例: テキストファイルとすべてのファイル)
+                ofd.Filter = "テキストファイル (*.txt)|*.txt|すべてのファイル (*.*)|*.*";
+                ofd.FilterIndex = 1; // デフォルトは1番目
 
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    // 選択されたファイルのパスを textBox1 に表示
+                    textBox1.Text = ofd.FileName;
+                }
+            }
         }
+        
 
         private void label3_Click(object sender, EventArgs e)
         {
