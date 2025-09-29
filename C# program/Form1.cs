@@ -156,7 +156,10 @@ namespace C__program
             if (result == DialogResult.OK)
             {
                 // OK が押されたときの処理
-                MessageBox.Show("OK");
+                using (Form2 f2 = new Form2())
+                {
+                    f2.ShowDialog(this); // this を渡すと親フォームが無効化される
+                }
             }
         }
         // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\    }
