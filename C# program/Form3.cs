@@ -16,5 +16,10 @@ namespace C__program
         {
             InitializeComponent();
         }
+
+        private void radioButton12_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
