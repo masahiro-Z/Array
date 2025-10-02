@@ -84,6 +84,22 @@ namespace C__program
             this.Close();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int n = (int)numericUpDown1.Value; // 段数を取得
+            richTextBox1.Clear();              
+
+            for (int i = 1; i <= n; i++)
+            {
+                string line = "";
+                for (int j = 0; j < i; j++)   
+                {
+                    line += j.ToString();
+                }
+                richTextBox1.AppendText(line + Environment.NewLine);
+            }
+        }
         // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 

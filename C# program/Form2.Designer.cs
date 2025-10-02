@@ -93,6 +93,11 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(36, 369);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(47, 25);
             this.numericUpDown1.TabIndex = 4;
@@ -116,6 +121,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Loop";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
@@ -192,7 +198,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label5.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(135, 121);
+            this.label5.Location = new System.Drawing.Point(120, 118);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 18);
             this.label5.TabIndex = 13;
