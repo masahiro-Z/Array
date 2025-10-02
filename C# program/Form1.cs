@@ -143,7 +143,7 @@ namespace C__program
         {
             label5.BackColor = System.Drawing.Color.Blue;
         }
-
+        // from2　\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         private void button3_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -155,16 +155,18 @@ namespace C__program
 
             if (result == DialogResult.OK)
             {
-                // OK が押されたときの処理
                 using (Form2 f2 = new Form2())
                 {
                     f2.MessageText = label6.Text;
 
-                    f2.ShowDialog(this); // this を渡すと親フォームが無効化される
+                    if (f2.ShowDialog(this) == DialogResult.OK)
+                    {
+                        label5.Text = f2.ResultText;
+                    }
                 }
             }
         }
-        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\    }
+        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     }
 }
 

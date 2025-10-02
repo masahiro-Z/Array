@@ -63,6 +63,27 @@ namespace C__program
         {
             TrimTextBoxes(textBox2, textBox3, textBox4, textBox5);
         }
+        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+        // 形成\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string[] values = { textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text };
+            textBox1.Text = string.Join(",", values);
+        }
+        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+        // Close \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        public string ResultText { get; private set; }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ResultText = textBox1.Text;
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+
+        }
         // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
