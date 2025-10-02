@@ -137,6 +137,7 @@
             this.button3.TabIndex = 8;
             this.button3.Text = "分割";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -176,19 +177,18 @@
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(135, 80);
+            this.label4.BackColor = System.Drawing.Color.DarkGray;
+            this.label4.Location = new System.Drawing.Point(135, 75);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 18);
+            this.label4.Size = new System.Drawing.Size(448, 32);
             this.label4.TabIndex = 12;
-            this.label4.Text = "label4";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label5.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(108, 121);
+            this.label5.Location = new System.Drawing.Point(135, 121);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 18);
             this.label5.TabIndex = 13;
@@ -226,6 +226,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(771, 523);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -248,6 +249,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = "Form②";
+            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -268,11 +270,11 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.Label label4;
     }
 }

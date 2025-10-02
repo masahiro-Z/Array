@@ -158,6 +158,8 @@ namespace C__program
                 // OK が押されたときの処理
                 using (Form2 f2 = new Form2())
                 {
+                    f2.MessageText = label6.Text;
+
                     f2.ShowDialog(this); // this を渡すと親フォームが無効化される
                 }
             }
