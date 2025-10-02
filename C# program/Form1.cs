@@ -58,7 +58,7 @@ namespace C__program
             }
             catch (Exception)
             {
-                label6.Text = "ファイルエラー";
+                label6.Text = "ファイルまたはフォルダが存在しません";
             }
         }
         // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -147,7 +147,7 @@ namespace C__program
         private void button3_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-        "本当に実行しますか？",     // メッセージ本文
+        "画面遷移してもよろしいですか？",     // メッセージ本文
         "確認",                      // タイトル
         MessageBoxButtons.OKCancel, // OK と キャンセルのボタンを出す
         MessageBoxIcon.Question     // アイコン
@@ -165,6 +165,36 @@ namespace C__program
                     }
                 }
             }
+        }
+        // form3 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("画面遷移してもよろしいですか？", "確認",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                using (Form3 f3 = new Form3())
+                {
+
+
+
+                }
+
+
+            }
+        }
+        // ファイル上書き\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string filePath = textBox1.Text;
+            string content = label5.Text;
+
+            try
+            {
+                File.WriteAllText(filePath, content);
+                MessageBox.Show("ファイル上書き");
+            }
+            catch (Exception ex){ MessageBox.Show("エラー"); }
         }
         // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     }
