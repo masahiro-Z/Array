@@ -40,7 +40,7 @@ namespace C__program
             {
                 rb.Checked = false;
             }
-            // label2に出力
+ // label2に出力
             RadioButton[] buttons =
                 {
         radioButton1, radioButton2, radioButton3,
@@ -51,16 +51,24 @@ namespace C__program
                 rb.CheckedChanged += RadioButton_CheckedChanged;
             }
 
-
-            // ボタン1設定
+ // ボタン1設定
             button1.Cursor = Cursors.Hand;
             button1.MouseEnter += button1_MouseEnter;
             button1.MouseLeave += button1_MouseLeave;
 
+            checkBox1.CheckedChanged += CheckBoxes_CheckedChanged;
+            checkBox2.CheckedChanged += CheckBoxes_CheckedChanged;
+            checkBox3.CheckedChanged += CheckBoxes_CheckedChanged;
 
+            button1.Enabled = false; // デフォルトクリック不可
+
+            // 画像ラジオボタン
+            radioButton10.CheckedChanged += LayoutRadioButton_CheckedChanged;
+            radioButton11.CheckedChanged += LayoutRadioButton_CheckedChanged;
+            radioButton12.CheckedChanged += LayoutRadioButton_CheckedChanged;
         }
 
-        // label2
+   // label2
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton rb = sender as RadioButton;
@@ -70,18 +78,27 @@ namespace C__program
             }
         }
 
-
-
-
-
-
-        // Button1 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ // Button1 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             button1.BackColor = Color.Black;  // 背景色を変更
             button1.ForeColor = Color.Yellow;    // テキスト色変更
 
         }
+
+        private void CheckBoxes_CheckedChanged(object sender, EventArgs e)
+        {
+            // 3つすべてチェックされているか確認
+            if (checkBox1.Checked && checkBox2.Checked && checkBox3.Checked)
+            {
+                button1.Enabled = true; // 押せるようにする
+            }
+            else
+            {
+                button1.Enabled = false; // 押せなくする
+            }
+        }
+
 
         // マウスがボタンから離れたとき
         private void button1_MouseLeave(object sender, EventArgs e)
@@ -94,8 +111,42 @@ namespace C__program
         {
             DialogResult = MessageBox.Show("チェック完了!", "確認", MessageBoxButtons.OK);
         }
-   // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-    
-    
+ // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+// 画像レイアウト変更
+        private void LayoutRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+
+            if (rb != null && rb.Checked)
+            {
+                if (rb == radioButton10)
+                {
+                    panel5.BackgroundImageLayout = ImageLayout.Zoom;
+                }
+                else if (rb == radioButton11)
+                {
+                    panel5.BackgroundImageLayout = ImageLayout.Stretch;
+                }
+                else if (rb == radioButton12)
+                {
+                    panel5.BackgroundImageLayout = ImageLayout.Center;
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

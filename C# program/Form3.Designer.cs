@@ -295,6 +295,9 @@
             // 
             // panel5
             // 
+            this.panel5.BackgroundImage = global::C__program.Properties.Resources.bfe8f2a7377fb21066b1f56d76a207da;
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel5.CausesValidation = false;
             this.panel5.Location = new System.Drawing.Point(37, 32);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(115, 100);
