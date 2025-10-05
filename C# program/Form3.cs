@@ -50,8 +50,14 @@ namespace C__program
             {
                 rb.CheckedChanged += RadioButton_CheckedChanged;
             }
+// \\\\\
+            radioButton8.CheckedChanged += RadioButton8or9_CheckedChanged;
+            radioButton9.CheckedChanged += RadioButton8or9_CheckedChanged;
 
- // ボタン1設定
+
+         
+
+            // ボタン1設定
             button1.Cursor = Cursors.Hand;
             button1.MouseEnter += button1_MouseEnter;
             button1.MouseLeave += button1_MouseLeave;
@@ -62,7 +68,7 @@ namespace C__program
 
             button1.Enabled = false; // デフォルトクリック不可
 
-            // 画像ラジオボタン
+    // 画像ラジオボタン
             radioButton10.CheckedChanged += LayoutRadioButton_CheckedChanged;
             radioButton11.CheckedChanged += LayoutRadioButton_CheckedChanged;
             radioButton12.CheckedChanged += LayoutRadioButton_CheckedChanged;
@@ -78,7 +84,50 @@ namespace C__program
             }
         }
 
- // Button1 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+        private void RadioButton8or9_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null && rb.Checked)
+            {
+                label1.Text = rb.Text;
+            }
+
+            if (radioButton8.Checked)
+            {
+                string[] weekdays = { "なし", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
+
+                comboBox1.Items.Clear();
+                comboBox1.Items.AddRange(weekdays);
+
+                comboBox1.SelectedIndex = 0;
+
+            }
+
+            if (radioButton9.Checked)
+            {
+                string[] months = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Sep", "Oct", "Aug", "Nov", "Dec" };
+                comboBox1.Items.Clear();
+                comboBox1.Items.AddRange(months);
+
+                comboBox1.SelectedIndex = 0;
+            }
+
+
+        }
+
+
+
+
+
+ // コンボボックス
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            label1.Text = comboBox1.SelectedItem.ToString();
+        }
+  // Button1 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             button1.BackColor = Color.Black;  // 背景色を変更
@@ -136,17 +185,6 @@ namespace C__program
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
+      
     }
 }
